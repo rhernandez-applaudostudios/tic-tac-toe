@@ -10,6 +10,7 @@ class tictactoe {
 		this.n = n;
 		this.board = [];
 		this.createBoard();
+    this.state = 'START'; // finished (DRAW | X | 0 ) | DONE ( MEANS PLAYING ) | START
 	}
 
   getBoard() {
@@ -40,7 +41,7 @@ class tictactoe {
 	}
 
 	move(move) {
-		if(this.isValidMove(move)) {
+		if(this.isValidMove(move) && ~['DONE', 'START'].indexOf(this.state)) {
 			let moveState = this.PLAYERS[this.PLAYER_TURN];
 			let count = 0;
 			let state;
@@ -63,7 +64,7 @@ class tictactoe {
 					break;
 				}
 			}
-			if (state) return { state };
+			if (state) {this.state = state; return { state };}
 			// verify row
 			count=0;
 			for(let i = 0; i< this.board.length; i++) {
@@ -78,7 +79,7 @@ class tictactoe {
 					break;
 				}
 			}
-			if (state) return { state };
+			if (state) {this.state = state; return { state };}
 			// verify diagonal
 			count=0;
 			for(let i = 0; i< this.board.length; i++) {
@@ -93,7 +94,7 @@ class tictactoe {
 					break;
 				}
 			}
-			if (state) return { state };
+			if (state) {this.state = state; return { state };}
 			// // verify diagonal 2
 			count=0;
 			for(let i = 0; i< this.board.length; i++) {
@@ -108,7 +109,7 @@ class tictactoe {
 					break;
 				}
 			}
-			if (state) return { state };
+			if (state) {this.state = state; return { state };}
 			if (this.MOVES_COUNT === this.n*this.n) {
 				return {
 					state: 'DRAW'
