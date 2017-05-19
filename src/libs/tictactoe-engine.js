@@ -5,7 +5,7 @@ class tictactoe {
 		this.CELL_0 = '0';
 		this.PLAYERS = [this.CELL_X, this.CELL_0]
 		this.PLAYER_TURN = 0;
-		this.WINNING_LENGTH = 3;
+		this.WINNING_LENGTH = Number(n);
 		this.MOVES_COUNT = 0;
 		this.n = n;
 		this.board = [];
@@ -81,25 +81,23 @@ class tictactoe {
 			if (state) return { state };
 			// verify diagonal
 			count=0;
-			let deface = move.row - move.col;
 			for(let i = 0; i< this.board.length; i++) {
-				if(!this.board[i + deface]) {
-					continue;
-				}
-				if(this.board[i + deface][i] !== moveState) {
+				if(this.board[i][i] !== moveState) {
 					count=0;
 				} else {
 					count++;
 				};
+        if(count === this.WINNING_LENGTH) {
+					// report win
+					state = moveState;
+					break;
+				}
 			}
 			if (state) return { state };
 			// // verify diagonal 2
 			count=0;
 			for(let i = 0; i< this.board.length; i++) {
-				if(this.board[i + deface]) {
-					continue;
-				}
-				if(this.board[i + deface][(this.board.length - 1) - i] !== moveState) {
+				if(this.board[i][(this.board.length - 1) - i] !== moveState) {
 					count=0;
 				} else {
 					count++;
