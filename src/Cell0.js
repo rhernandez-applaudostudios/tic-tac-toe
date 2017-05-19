@@ -8,7 +8,7 @@ class Cell0 extends Component {
 
   render() {
     return (
-      <div className={'cell cell-0' + this.props.classModifiers} onClick={this.props.setAsMove}>0</div>
+      <div className={'cell cell-0' + this.props.classModifiers} onClick={this.props.setAsMove}><span>o</span></div>
     );
   }
 }

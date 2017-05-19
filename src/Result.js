@@ -9,7 +9,8 @@ class Result extends Component {
   render() {
     let stringResult = this.props.result === 'X' ? 
         'The winner is player X!!' : this.props.result === '0' ?
-            'The winner is player 0!!' : 'Game in progress.. Good luck !';
+            'The winner is player 0!!' : this.props.result === undefined ? 
+                '' : 'Game in progress.. Good luck !';
     return (
       <div className="Results">
         {stringResult}

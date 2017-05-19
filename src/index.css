@@ -15,9 +15,19 @@ body {
 }
 
 .cell {
-  height: 50px;
-  width: 50px;
-  border: solid 1px;
+  height: 75px;
+  width: 75px;
+  border: solid 1px #D8D8D8;
+  font-size: 50px;
+  font-weight: 700;
+  position: relative;
+  text-transform: uppercase;
+}
+.cell span {
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .cell--first {
   border-left: solid 0 transparent;
@@ -33,4 +43,81 @@ body {
 
 .cell--bottom {
   border-bottom: solid 0 transparent;
+}
+
+.cell-x {
+  color: #3989D4;
+}
+
+.cell-0 {
+  color: #39BCD4;
+}
+
+
+.btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Courier New;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  outline: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+.player-turn-container__player {
+  display: inline-block;
+  border: 1px solid #D8D8D8;
+  border-radius: 50%;
+  position:relative;
+  text-transform: uppercase;
+}
+
+.player-turn-container__player:last-child {
+  margin-left: 25px;
+}
+
+.player-turn-container__player-1 {
+  color: #3989D4;
+}
+
+.player-turn-container__player-2 {
+  color: #39BCD4;
+}
+
+.player-turn-container__player-1, .player-turn-container__player-2 {
+  display: inline-block;
+  min-width: 50px;
+  min-height: 50px;
+  font-size: 25px;
+  border-radius: 50%;
+}
+
+.player-turn-container__player-1 span, .player-turn-container__player-2 span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.player-turn-container__player--active {
+  background-color: #5494d3;
+  color: white; 
 }

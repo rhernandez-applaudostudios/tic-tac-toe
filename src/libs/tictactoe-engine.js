@@ -67,7 +67,7 @@ class tictactoe {
 			// verify row
 			count=0;
 			for(let i = 0; i< this.board.length; i++) {
-				if(this.board[i][move.row] !== moveState) {
+				if(this.board[i][move.col] !== moveState) {
 					count=0;
 				} else {
 					count++;

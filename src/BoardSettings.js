@@ -31,7 +31,7 @@ class BoardSettings extends Component {
                 onChange={(event) => this.onInputChange(event.target.value)} />
         </div>
         <div>
-            <button className="settings-button" onClick={(event) => this.onCreateClick()}>Start game</button>
+            <button className="btn" onClick={(event) => this.onCreateClick()}>Start game</button>
         </div>
       </div>
     );
