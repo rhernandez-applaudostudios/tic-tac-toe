@@ -1,0 +1,15 @@
+.settings {
+  margin-top: 20px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #0086a5;
+}
+
+.settings-label {
+  margin: 20px 0;
+}
+
+.settings-label input {
+  padding: 10px;
+  margin: 0 10px;
+}

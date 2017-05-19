@@ -1,0 +1,9 @@
+.board {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.board-row {
+    display: inline-block;
+    vertical-align: middle;
+}

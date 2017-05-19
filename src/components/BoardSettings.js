@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 function BoardSettings({ onInputChange, status, createGame, size}) {
   let buttonLabel = !status ? 'Start game!' : 'New Game';

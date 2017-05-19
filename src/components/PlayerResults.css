@@ -1,0 +1,36 @@
+.player-results {
+  display: block;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-top: 25px;
+  margin-bottom: 35px;
+}
+
+.player-results div {
+  display: inline-block;
+  margin-right: 65px;
+  position: relative;
+}
+
+.player-results .amount {
+  position: absolute;
+  white-space: nowrap;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  text-transform: lowercase;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.player-results div:last-child {
+  margin-right: 0;
+}
+
+.player-1, .cell-x {
+  color: #3989D4;
+}
+
+.player-2, .cell-0 {
+  color: #39BCD4;
+}

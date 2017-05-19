@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 function PlayerResults({ show, player1, player2, draws }) {
   if (!show) {

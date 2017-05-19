@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import gameEngine from './libs/tictactoe-engine';
-import BoardSettings from './BoardSettings';
-import Board from './Board';
-import PlayerTurn from './PlayerTurn';
-import PlayerResults from './PlayerResults';
-import Result from './Result';
+import BoardSettings from './components/BoardSettings';
+import Board from './components/Board';
+import PlayerTurn from './components/PlayerTurn';
+import PlayerResults from './components/PlayerResults';
+import Result from './components/Result';
+
 import './App.css';
+import './components/Board.css';
+import './components/BoardSettings.css';
+import './components/Cell.css';
+import './components/PlayerResults.css';
+import './components/PlayerTurn.css';
+import './components/Result.css';
 
 class App extends Component {
   constructor(props) {
