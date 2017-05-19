@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import gameEngine from './libs/tictactoe-engine';
 import BoardSettings from './BoardSettings';
 import Board from './Board';
+import PlayerTurn from './PlayerTurn';
 import Result from './Result';
 import './App.css';
 
@@ -24,7 +25,8 @@ class App extends Component {
       settings: {
         size
       },
-      board: gameHandler.getBoard()
+      board: gameHandler.getBoard(),
+      turn: gameHandler.getPlayerTurn()
     });
   }
   move = (pos) => {
@@ -32,7 +34,8 @@ class App extends Component {
     let result = gameHandler.move(pos);
     if(result) {
       this.setState({
-        status: result
+        status: result,
+        turn: gameHandler.getPlayerTurn()
       })
     } else {
       console.error('Moved not performed');
@@ -48,6 +51,7 @@ class App extends Component {
         <div className="appBody">
           <BoardSettings createGame={this.startGame}/>
           <Board board={this.state.board} move={this.move}/>
+          <PlayerTurn turn={this.state.turn}/>
           <Result result={this.state.status.state}/>
         </div>
       </div>
