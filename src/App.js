@@ -17,12 +17,13 @@ import './components/Result.css';
 class App extends Component {
   constructor(props) {
     super(props);
-
+    let gameHandler = gameEngine.createGame(3);
     this.state = {
-      game: {},
+      game: gameHandler,
+      board: gameHandler.getBoard(),
+      turn: gameHandler.getPlayerTurn(),
+      status: gameHandler.getState(),
       size: 3, // initial size
-      board: [],
-      status: {},
       player1: 0,
       player2: 0,
       draws: 0,
@@ -83,10 +84,10 @@ class App extends Component {
           <h2>Lets play Tic Tac Toe !</h2>
         </div>
         <div className="appBody">
-          <BoardSettings createGame={this.startGame} status={this.state.status.state} onInputChange={this.onInputChange} size={this.state.size}/>
           <PlayerResults player1={this.state.player1} player2={this.state.player2} draws={this.state.draws} show={this.state.board.length}/>
           <Board board={this.state.board} move={this.move}/>
           <PlayerTurn turn={this.state.turn}/>
+          <BoardSettings createGame={this.startGame} status={this.state.status.state} onInputChange={this.onInputChange} size={this.state.size}/>
           <Result result={this.state.status.state}/>
         </div>
       </div>
