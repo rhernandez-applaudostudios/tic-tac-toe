@@ -12,6 +12,9 @@ class tictactoe {
 		this.createBoard();
     this.state = 'START'; // finished (DRAW | X | 0 ) | DONE ( MEANS PLAYING ) | START
 	}
+  getState() {
+    return this.state;
+  }
 
   getBoard() {
     return this.board;

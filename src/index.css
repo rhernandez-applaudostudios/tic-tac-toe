@@ -22,6 +22,7 @@ body {
   font-weight: 700;
   position: relative;
   text-transform: uppercase;
+  animation: 3s all linear;
 }
 .cell span {
   position:absolute;
@@ -45,15 +46,6 @@ body {
   border-bottom: solid 0 transparent;
 }
 
-.cell-x {
-  color: #3989D4;
-}
-
-.cell-0 {
-  color: #39BCD4;
-}
-
-
 .btn {
   background: #3498db;
   background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
@@ -66,8 +58,8 @@ body {
   border-radius: 28px;
   font-family: Courier New;
   color: #ffffff;
-  font-size: 20px;
-  padding: 10px 20px 10px 20px;
+  font-size: 18px;
+  padding: 4px 20px 4px 20px;
   text-decoration: none;
   outline: none;
 }
@@ -80,6 +72,43 @@ body {
   background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
+}
+
+.player-results {
+  display: block;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-top: 25px;
+  margin-bottom: 35px;
+}
+
+.player-results div {
+  display: inline-block;
+  margin-right: 65px;
+  position: relative;
+}
+
+.player-results .amount {
+  position: absolute;
+  white-space: nowrap;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  text-transform: lowercase;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.player-results div:last-child {
+  margin-right: 0;
+}
+
+.player-1, .cell-x {
+  color: #3989D4;
+}
+
+.player-2, .cell-0 {
+  color: #39BCD4;
 }
 
 .player-turn-container__player {
@@ -96,14 +125,6 @@ body {
 
 .player-turn-container__player:last-child {
   margin-left: 25px;
-}
-
-.player-turn-container__player-1 {
-  color: #3989D4;
-}
-
-.player-turn-container__player-2 {
-  color: #39BCD4;
 }
 
 .player-turn-container__player-1, .player-turn-container__player-2 {
@@ -133,4 +154,33 @@ body {
   color: #5494d3;
   left: 50%;
   transform: translate(-50%, 0);
+}
+
+.results {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #0086a5;
+  font-size: 18px;
+}
+
+.settings {
+  margin-top: 20px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #0086a5;
+}
+
+.settings-label {
+  margin: 20px 0;
+}
+
+
+.settings-label input {
+  padding: 10px;
+  margin: 0 10px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  height:auto;
 }
