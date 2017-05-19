@@ -1,27 +1,12 @@
 import React, { Component } from 'react';
-import CellX from './CellX';
-import Cell0 from './Cell0';
-import CellEmpty from './CellEmpty';
 
-class Cell extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { s: null };
-  }
-  setAsMove = () => {
-    this.props.move({
-        row: this.props.position[0],
-        col: this.props.position[1]
-    });
-  }
-  render() {
-      if(this.props.value === 'X') {
-          return <CellX setAsMove={this.setAsMove} classModifiers={this.props.classModifiers}/>;
-      } else if (this.props.value === '0') {
-        return <Cell0 setAsMove={this.setAsMove} classModifiers={this.props.classModifiers}/>;
-      } else {
-          return <CellEmpty setAsMove={this.setAsMove} classModifiers={this.props.classModifiers}/>;
-      }
+function Cell({ move, classModifiers, position, value }) {
+  if (value === 'X') {
+    return <div className={'cell cell-x' + classModifiers} onClick={() => { move({ row: position[0], col: position[1] }) }}><span>x</span></div>;
+  } else if (value === '0') {
+    return <div className={'cell cell-0' + classModifiers} onClick={() => { move({ row: position[0], col: position[1] }) }}><span>o</span></div>;
+  } else {
+    return <div className={'cell cell-empty' + classModifiers} onClick={() => { move({ row: position[0], col: position[1] }) }}></div>;
   }
 }
 
