@@ -9,8 +9,8 @@ class PlayerTurn extends Component {
     let player2Active = this.props.turn.toLowerCase() === '0' ? 'player-turn-container__player--active' : '';
     return (
       <div className="player-turn-container">
-        <div className={'player-turn-container__player player-turn-container__player-1 ' + player1Active}><span>x</span></div>
-        <div className={'player-turn-container__player player-turn-container__player-2 ' + player2Active}><span>o</span></div>
+        <div className={'player-turn-container__player player-turn-container__player-1 ' + player1Active}><i>Playing</i><span>x</span></div>
+        <div className={'player-turn-container__player player-turn-container__player-2 ' + player2Active}><i>Playing</i><span>o</span></div>
       </div>
     );
   }

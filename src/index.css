@@ -90,6 +90,10 @@ body {
   text-transform: uppercase;
 }
 
+.player-turn-container__player i {
+  display: none;
+}
+
 .player-turn-container__player:last-child {
   margin-left: 25px;
 }
@@ -120,4 +124,13 @@ body {
 .player-turn-container__player--active {
   background-color: #5494d3;
   color: white; 
+}
+.player-turn-container__player--active i{
+  display: block;
+  font-size: 10px;
+  position: absolute;
+  top: -15px;
+  color: #5494d3;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
