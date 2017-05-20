@@ -1,13 +1,14 @@
 import React from 'react';
 
-function Cell({ move, classModifiers, position, value }) {
-  if (value === 'X') {
-    return <div className={'cell cell-x' + classModifiers} onClick={() => { move({ row: position[0], col: position[1] }) }}><span>x</span></div>;
-  } else if (value === '0') {
-    return <div className={'cell cell-0' + classModifiers} onClick={() => { move({ row: position[0], col: position[1] }) }}><span>o</span></div>;
-  } else {
-    return <div className={'cell cell-empty' + classModifiers} onClick={() => { move({ row: position[0], col: position[1] }) }}></div>;
-  }
+function Cell({ onClick, classModifiers, position, value }) {
+  const cellType = (value === 'CELL_EMPTY') ? 'empty' : value.toLowerCase();
+
+  return (
+  <div className={ `cell cell-${cellType} ${classModifiers}`} 
+    onClick={() => { onClick({ row: position[0], col: position[1] }) }}>
+      <span>{ (cellType === 'empty')? '' : cellType}</span>
+  </div>
+  );
 }
 
 export default Cell;

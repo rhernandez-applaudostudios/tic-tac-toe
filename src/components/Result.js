@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Result({result}) {
-  let stringResult = result === 'X' ? 
+  const stringResult = result === 'X' ? 
       'The winner is player X!!' : result === '0' ?
           'The winner is player O!!' : result === undefined ? 
               '' : result === 'DRAW' ?

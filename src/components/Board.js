@@ -26,7 +26,7 @@ function Board({ board, move }) {
                   } else if (j === arr.length - 1) {
                     classes += ' cell--bottom';
                   }
-                  return <Cell key={i + '-' + j} classModifiers={classes} position={position} value={board[i][j]} move={move} />
+                  return <Cell key={`${i} - ${j}`} classModifiers={classes} position={position} value={board[i][j]} onClick={move} />
                 })
               }
             </div>
