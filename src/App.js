@@ -87,8 +87,8 @@ class App extends Component {
           <PlayerResults player1={this.state.player1} player2={this.state.player2} draws={this.state.draws} show={this.state.board.length}/>
           <Board board={this.state.board} move={this.move}/>
           <PlayerTurn turn={this.state.turn}/>
-          <BoardSettings createGame={this.startGame} status={this.state.status.state} onInputChange={this.onInputChange} size={this.state.size}/>
           <Result result={this.state.status.state}/>
+          <BoardSettings createGame={this.startGame} status={this.state.status.state} onInputChange={this.onInputChange} size={this.state.size}/>
         </div>
       </div>
     );
